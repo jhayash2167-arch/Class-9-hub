@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class 9 Study Hub</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #4CAF50, #2e7d32);
+      color: white;
+    }
+
+    /* Sidebar */
+    #sidebar {
+      height: 100%;
+      width: 250px;
+      position: fixed;
+      top: 0;
+      left: -250px;
+      background: #333;
+      padding-top: 60px;
+      transition: 0.3s;
+      z-index: 100;
+    }
+    #sidebar a {
+      padding: 12px 20px;
+      text-decoration: none;
+      font-size: 18px;
+      color: white;
+      display: block;
+      cursor: pointer;
+    }
+    #sidebar a:hover {
+      background: #4CAF50;
+    }
+
+    /* Toggle Button */
+    #toggleBtn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 22px;
+      background: #222;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+      z-index: 101;
+    }
+
+    /* Content Area */
+    #content {
+      margin-left: 0;
+      padding: 60px 20px;
+      transition: 0.3s;
+      text-align: center;
+    }
+
+    /* Welcome Box */
+    .welcome-box {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      max-width: 700px;
+      margin: auto;
+    }
+    .welcome-box h1 {
+      font-size: 32px;
+      color: #fff;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+    }
+    .welcome-box p {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+    .quote {
+      margin-top: 20px;
+      font-style: italic;
+      font-size: 20px;
+      color: #ffe;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.4);
+    }
+
+    /* Accordion for chapters */
+    .accordion {
+      background: #444;
+      color: white;
+      cursor: pointer;
+      padding: 12px;
+      width: 100%;
+      text-align: left;
+      border: none;
+      outline: none;
+      transition: 0.3s;
+      margin-top: 10px;
+      border-radius: 8px;
+    }
+    .accordion:hover {
+      background: #4CAF50;
+    }
+    .panel {
+      padding: 0 15px;
+      display: none;
+      background: rgba(0,0,0,0.2);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+    .panel p {
+      padding: 10px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div id="sidebar">
+    <a onclick="showSubject('math')">📘 Mathematics</a>
+    <a onclick="showSubject('science')">🔬 Science</a>
+    <a onclick="showSubject('sst')">🌍 Social Science</a>
+    <a onclick="showSubject('english')">📖 English</a>
+    <a onclick="showSubject('hindi')">📝 Hindi</a>
+    <a onclick="showSubject('sample')">📑 Sample Papers</a>
+  </div>
+
+  <!-- Content -->
+  <div id="content">
+    <button id="toggleBtn" onclick="toggleSidebar()">☰ Menu</button>
+    
+    <!-- Welcome -->
+    <div id="welcome" class="welcome-box">
+      <h1>✨ Welcome to Class 9 Super Study Hub ✨</h1>
+      <p>Select any subject and chapter from the menu to view notes here.</p>
+      <hr style="margin:20px 0; border: none; height: 2px; background: rgba(255,255,255,0.4);">
+      <p class="quote" id="quoteBox">“Success doesn’t come from what you do occasionally, it comes from what you do consistently.”</p>
+    </div>
+
+    <!-- Mathematics Section -->
+    <div id="math" style="display:none;">
+      <h2>📘 Mathematics Notes</h2>
+      
+      <!-- Chapter 1 -->
+      <button class="accordion">Chapter 1: Number Systems</button>
+      <div class="panel">
+        <p><b>Number Systems</b> include natural numbers, whole numbers, integers, rational and irrational numbers. 
+        Real numbers include both rational and irrational numbers. Decimal expansion of rationals is terminating or repeating; irrational is non-terminating and non-repeating.</p>
+      </div>
+
+      <!-- Chapter 2 -->
+      <button class="accordion">Chapter 2: Polynomials</button>
+      <div class="panel">
+        <p>A <b>polynomial</b> is an expression consisting of variables and coefficients. 
+        Zeroes of a polynomial are values of x where P(x)=0. Relationship between coefficients and zeroes is important for quadratic and cubic polynomials.</p>
+      </div>
+
+      <!-- Chapter 3 -->
+      <button class="accordion">Chapter 3: Coordinate Geometry</button>
+      <div class="panel">
+        <h3>📘 Chapter 3: Coordinate Geometry</h3>
+        <p>Coordinate Geometry combines algebra and geometry using the <b>Cartesian coordinate system</b>.</p>
+
+        <h4>1. Cartesian System</h4>
+        <p>Plane divided into 4 quadrants by X-axis & Y-axis. Origin (0,0).</p>
+
+        <h4>2. Coordinates of a Point</h4>
+        <p>(x,y) where x = abscissa, y = ordinate.</p>
+
+        <h4>3. Quadrants</h4>
+        <ul>
+          <li>I Quadrant (+,+)</li>
+          <li>II Quadrant (–,+)</li>
+          <li>III Quadrant (–,–)</li>
+          <li>IV Quadrant (+,–)</li>
+        </ul>
+
+        <h4>4. Distance Between Points (Preview)</h4>
+        <p>AB = √((x₂ – x₁)² + (y₂ – y₁)²)</p>
+
+        <h4>📌 Summary</h4>
+        <p>Coordinate Geometry gives a way to represent points and figures on a plane using ordered pairs.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      let sidebar = document.getElementById("sidebar");
+      let content = document.getElementById("content");
+      if (sidebar.style.left === "-250px") {
+        sidebar.style.left = "0";
+        content.style.marginLeft = "250px";
+      } else {
+        sidebar.style.left = "-250px";
+        content.style.marginLeft = "0";
+      }
+    }
+
+    function showSubject(id) {
+      document.getElementById("welcome").style.display = "none";
+      let sections = document.querySelectorAll("#content > div");
+      sections.forEach(sec => {
+        if (sec.id !== "welcome") sec.style.display = "none";
+      });
+      document.getElementById(id).style.display = "block";
+    }
+
+    // Accordion logic
+    document.addEventListener("DOMContentLoaded", function() {
+      let acc = document.getElementsByClassName("accordion");
+      for (let i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          let panel = this.nextElementSibling;
+          panel.style.display = (panel.style.display === "block") ? "none" : "block";
+        });
+      }
+
+      // Auto-refreshing quotes
+      const quotes = [
+        "“Success doesn’t come from what you do occasionally, it comes from what you do consistently.”",
+        "“The future depends on what you do today.” – Mahatma Gandhi",
+        "“Dream, dream, dream. Dreams transform into thoughts and thoughts result in action.” – A.P.J. Abdul Kalam",
+        "“Education is the most powerful weapon which you can use to change the world.” – Nelson Mandela"
+      ];
+      let quoteBox = document.getElementById("quoteBox");
+      setInterval(() => {
+        let randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+        quoteBox.textContent = randomQuote;
+      }, 5000);
+    });
+  </script>
+
+</body>
+</html>
